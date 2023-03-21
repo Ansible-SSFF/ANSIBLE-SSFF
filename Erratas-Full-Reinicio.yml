@@ -1,7 +1,6 @@
 ---
 - name: Modulo de Instalación de Erratas Full
   hosts: all
-  gather_facts: False
   become: true
   tasks:
   - name: Instalacion de Erratas Full
