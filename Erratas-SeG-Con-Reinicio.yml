@@ -1,0 +1,17 @@
+---
+- name: Modulo de Erratas
+  hosts: all
+  gather_facts: False
+  become: true
+  tasks:
+    - name: Instalando Erratas Seguridad
+      yum:
+       name: '*'
+       security: yes
+       bugfix: no
+       state: latest
+       update_cache: yes
+
+    - name: Reinicio Pos Intalacion de Erratas Seguridad
+      reboot:
+        reboot_timeout: 460055
